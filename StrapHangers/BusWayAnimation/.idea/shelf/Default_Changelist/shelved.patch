@@ -1,0 +1,100 @@
+Index: script.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- script.js	(date 1599285515189)
++++ script.js	(date 1599285515189)
+@@ -0,0 +1,12 @@
++
++
++let busID = document.getElementById("bus")
++
++
++function moveBus(){
++console.log("This was called");
++console.log(busID);
++
++
++
++}
+Index: ../Test/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- ../Test/index.html	(date 1599258686121)
++++ ../Test/index.html	(date 1599258686121)
+@@ -0,0 +1,10 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++</head>
++<body>
++HELLLOO
++</body>
++</html>
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.html	(date 1599285251717)
++++ index.html	(date 1599285251717)
+@@ -0,0 +1,18 @@
++<!DOCTYPE html>
++<html lang="en">
++<head>
++    <meta charset="UTF-8">
++    <title>Title</title>
++    <link rel="stylesheet" href="styles.css">
++</head>
++<body>
++<div class = "container"  id="everything" onclick="moveBus()">
++
++    <span class = "backgroundImg" id="street" ></span>
++    <span class="bus" id="bus"></span>
++
++    <script type="text/javascript" src="script.js"></script>
++</div>
++
++</body>
++</html>
+Index: styles.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- styles.css	(date 1599277549632)
++++ styles.css	(date 1599277549632)
+@@ -0,0 +1,24 @@
++
++.container{
++    width: 1000px;
++    height: 200px;
++    position: relative;
++}
++
++.backgroundImg{
++    content: url("Pics/RoadWays.png");
++    width: 100%;
++    height: 200px;
++    position: absolute;
++
++
++}
++
++.bus{
++    content: url("Pics/bus.png");
++    height: 25px;
++    width: 50px;
++    position: absolute;
++    top: 100px;
++}
++
+diff --git ../Test/style.css ../Test/style.css
+new file mode 100644
+diff --git ../Test/functions.js ../Test/functions.js
+new file mode 100644
