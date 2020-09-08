@@ -11,6 +11,7 @@ function moveForward(){
 
 }
 
+
 function busRoutine(){
     busID.style.left = '-50px';
     busID.style.top = '110px';

@@ -1,0 +1,57 @@
+body{
+    background-color: #333;
+}
+
+.container{
+    width: 1000px;
+    height: 500px;
+    position: relative;
+}
+
+.backgroundImg{
+    content: url("Pic/road.png");
+    width: 1000px;
+    height: 450px;
+    position: absolute;
+}
+
+.bus{
+    content: url("Pic/Bus.png");
+    position: absolute;
+    width: 65px;
+    height: 23px;
+    top: 223px;
+    left: -50px;
+}
+
+.bus2{
+    content: url("Pic/Bus.png");
+    position: absolute;
+    width: 65px;
+    height: 23px;
+    top: 200px;
+    left: 1000px;
+    transform: rotate(180deg);
+}
+
+.car1{
+    content: url("Pic/Car1.png");
+    position: absolute;
+    width: 33px;
+    height:20px;
+    left: 225px;
+    transform: rotate(90deg);
+
+}
+
+.car2{
+    content: url("Pic/Car2.png");
+    position: absolute;
+    width: 33px;
+    height:20px;
+    left: 215px;
+    top:440px;
+    transform: rotate(-90deg);
+}
+
+
