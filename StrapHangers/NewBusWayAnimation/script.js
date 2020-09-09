@@ -18,11 +18,165 @@ function car2Routine(){
     car2.style.top = "440px";
     car2.style.transform = "rotate(-90deg)";
 
-    car2DriveUp();
-    //car2TurnRight
-    //car2LoadAndDropOff
-    //car2DriveAgain
-    //car2TurnOffStreet
+    setTimeout(car2DriveUp,0);
+    setTimeout(car2TurnRight,4000);
+    setTimeout(car2LoadAndDropOff, 7070);
+    setTimeout(car2DriveAgain, 10000);
+    setTimeout(car2TurnOffStreet, 15000);
+
+}
+
+function car2TurnOffStreet(){
+    let deg = 0;
+    let deg2 = 15;
+    let left = 700;
+    let top = 223; // get to 245
+    let s;
+    let slow= 0;
+
+    let id = setInterval(frame, timeout);
+    function frame(){
+        if(left <= 790){
+            left++;
+            car2.style.left = left + "px";
+
+            if(deg <= 90){
+                deg++;
+                s = "rotate(" + deg + "deg)";
+                car2.style.transform = s;
+            }
+
+            slow++;
+            if(slow % 4 === 0) {
+                top++;
+                car2.style.top = top + "px";
+            }
+
+        }else{
+
+            if(top <= 450){
+                top++;
+                car2.style.top = top + "px";
+                if(deg <= 90){
+                    deg++;
+                    s = "rotate(" + deg + "deg)";
+                    car2.style.transform = s;
+                }
+            }
+            else {
+                clearInterval(id);
+                }
+        }
+    }
+
+}
+
+function car2DriveAgain(){
+    let deg = 0;
+    let deg2 = -15;
+    let left = 475;
+    let top = 245; // need to get to 225
+    let s;
+    let w;
+
+    let id = setInterval(frame, timeout + 10);
+    function frame(){
+        if(deg > -15){
+            deg--;
+            s = "rotate(" + deg + "deg)";
+            car2.style.transform = s;
+
+            if( top > 223){
+                top--;
+                car2.style.top = top + 'px';
+            }
+            if(left < 600){
+                left++;
+                car2.style.left = left + 'px';
+            }
+
+        }else{
+            if(deg2 < 0 ){
+                deg2++;
+                w = "rotate(" + deg2 + "deg)";
+                car2.style.transform = w;
+
+                if( top > 223){
+                    top--;
+                    car2.style.top = top + 'px';
+                }
+                if(left < 600){
+                    left++;
+                    car2.style.left = left + 'px';
+                }
+
+
+            }else {
+                if(left < 700){
+                    left++;
+                    car2.style.left = left + 'px';
+                }else {
+                    clearInterval(id);
+                }
+            }
+        }
+    }
+
+}
+
+function car2LoadAndDropOff(){
+    let deg = 0;
+    let deg2 = 15;
+    let left = 450;
+    let top = 223;
+    let s;
+    let w;
+
+    let id = setInterval(frame, timeout + 10);
+    function frame(){
+        if(deg <= 15) {
+            deg++;
+            s = "rotate(" + deg.toString() + "deg)";
+            car2.style.transform = s;
+
+            if (top < 245) {
+                top++;
+                car2.style.top = top + 'px';
+            }
+            if(left <= 475) {
+                left++;
+                car2.style.left = left + 'px';
+            }
+
+        } else{
+
+            if(deg2 >= 0){
+                deg2--;
+                w = "rotate(" + deg2.toString() + "deg)";
+                car2.style.transform = w;
+
+                if (top < 245) {
+                    top++;
+                    car2.style.top = top + 'px';
+                }
+
+                if(left <= 475) {
+                    left++;
+                    car2.style.left = left + 'px';
+                }
+
+            }else {
+                if(left <= 475){
+                    left++;
+                    car2.style.left = left + 'px';
+                }else {
+                    clearInterval(id);
+                }
+            }
+        }
+
+    }
+
 
 }
 
@@ -30,10 +184,41 @@ function car2TurnRight(){
     let top = 310;
     let left = 215;
     let deg = -90; // need to get to 0
-
+    let s;
+    let slow = 0
     let id = setInterval(frame, timeout);
     function frame(){
-        
+        if(top > 223){
+            top--;
+            car2.style.top = top + 'px';
+
+            if(deg <= 0 && top <= 270){
+                deg++;
+                s = "rotate(" + deg.toString() + "deg)";
+                car2.style.transform = s;
+            }
+
+            slow++;
+            if(slow % 8 === 0){
+                left++;
+                car2.style.left = left + 'px';
+            }
+
+        }else{
+
+
+            if(left < 450){
+                left++;
+                car2.style.left = left + 'px';
+
+                if(deg <= 0){
+                    deg++;
+                    s = "rotate(" + deg.toString() + "deg)";
+                    car2.style.transform = s;
+                }
+            }
+            else{clearInterval(id);}
+        }
     }
 }
 
@@ -55,7 +240,7 @@ function car2DriveUp(){
 function bus2Routine(){
     bus2.style.left = '1000px';
     bus2.style.top = '200px';
-    bus2.style.transform = 'rotate(180deg)';
+    //bus2.style.transform = 'rotate(180deg)';
     setTimeout(bus2Drive, 0);
 }
 
@@ -64,7 +249,7 @@ function busRoutine(){
     bus.style.left = '-50px';
     setTimeout(initialDrive, 0);
     setTimeout(park, 3200);
-    setTimeout(unpark, 5000);
+    setTimeout(unpark, 6800);
 }
 
 function car1Routine(){
@@ -88,8 +273,6 @@ function bus2Drive(){
     }
 }
 
-
-
 function carInitialDrive(){
     let top = 0;
 
@@ -103,7 +286,6 @@ function carInitialDrive(){
         }
     }
 }
-
 
 function carTurnToEnd(){
 let top = 125;
@@ -161,11 +343,6 @@ let deg = 90; // got to 180
     }
 
 }
-
-
-
-
-
 
 function unpark(){
     let pos = 325;
