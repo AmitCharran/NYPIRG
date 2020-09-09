@@ -3,6 +3,7 @@ let bus = document.getElementById("bus");
 let bus2 = document.getElementById("bus2")
 let car1 = document.getElementById("car1");
 let car2 = document.getElementById("car2");
+let bus3 = document.getElementById("bus3");
 let timeout = 10;
 
 function start(){
@@ -10,6 +11,7 @@ function start(){
     setTimeout(car2Routine, 0);
     setTimeout(busRoutine, 0);
     setTimeout(bus2Routine,1500);
+    setTimeout(bus3Routine,5000);
 
 }
 
@@ -34,16 +36,18 @@ function car2TurnOffStreet(){
     let s;
     let slow= 0;
 
-    let id = setInterval(frame, timeout);
+    let id = setInterval(frame, timeout + 5);
     function frame(){
         if(left <= 790){
             left++;
             car2.style.left = left + "px";
 
             if(deg <= 90){
-                deg++;
-                s = "rotate(" + deg + "deg)";
-                car2.style.transform = s;
+
+                    deg++;
+                    s = "rotate(" + deg + "deg)";
+                    car2.style.transform = s;
+
             }
 
             slow++;
@@ -243,6 +247,27 @@ function bus2Routine(){
     //bus2.style.transform = 'rotate(180deg)';
     setTimeout(bus2Drive, 0);
 }
+
+function bus3Routine(){
+    bus3.style.left = '1000px';
+    bus3.style.top = '200px';
+    bus3.style.transform = 'rotate(180deg)';
+    setTimeout(bus3Drive, 0);
+}
+
+function bus3Drive(){
+    let left = 1000;
+    let id = setInterval(frame, timeout);
+    function frame(){
+        if(left >= -65){
+            left--;
+            bus3.style.left = left + 'px';
+        }else{
+            clearInterval(id);
+        }
+    }
+}
+
 
 function busRoutine(){
     bus.style.top = '223px';
