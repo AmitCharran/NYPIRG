@@ -4,6 +4,8 @@ let bus2 = document.getElementById("bus2")
 let car1 = document.getElementById("car1");
 let car2 = document.getElementById("car2");
 let bus3 = document.getElementById("bus3");
+let loadSign = document.getElementById("LoadSign");
+let loadArea = document.getElementById("LoadArea");
 let timeout = 10;
 
 function start(){
@@ -22,10 +24,21 @@ function car2Routine(){
 
     setTimeout(car2DriveUp,0);
     setTimeout(car2TurnRight,4000);
+    setTimeout(showLoadSign,7070);
     setTimeout(car2LoadAndDropOff, 7070);
     setTimeout(car2DriveAgain, 10000);
+    setTimeout(hideLoadSign,11000);
     setTimeout(car2TurnOffStreet, 15000);
 
+}
+
+function showLoadSign(){
+    loadSign.style.visibility = "visible";
+    loadArea.style.visibility = "visible";
+}
+function hideLoadSign(){
+    loadSign.style.visibility = "hidden";
+    loadArea.style.visibility = "hidden";
 }
 
 function car2TurnOffStreet(){
@@ -275,7 +288,21 @@ function busRoutine(){
     setTimeout(initialDrive, 0);
     setTimeout(park, 3200);
     setTimeout(unpark, 6800);
+    //setTimeout(bushighlight, 0);
+
+
 }
+
+function bushighlight(){
+    //bus.style.boxShadow = "2px 3px 15px darkblue";
+    //bus.style.backgroundColor = "darkblue";
+}
+
+function busunhighlight(){
+    bus.style.boxShadow = "2px 3px 15px transparent";
+    bus.style.backgroundColor = "transparent";
+}
+
 
 function car1Routine(){
     car1.style.left = '225px';
